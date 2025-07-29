@@ -6,11 +6,13 @@
 }
 
 body {
-    font-family: 'Georgia', serif;
-    line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    padding-top: 80px; /* Account for fixed header */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.7;
+    color: #2d3748;
+    background: linear-gradient(135deg, #fef7f0 0%, #f7fafc 50%, #edf2f7 100%);
+    padding-top: 70px;
+    /* Account for fixed header */
+    font-weight: 400;
 }
 
 /* Fixed Header Navigation */
@@ -19,10 +21,10 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
     transition: all 0.3s ease;
 }
 
@@ -32,20 +34,20 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0.75rem 2rem;
 }
 
 .logo h1 {
-    color: #2c3e50;
-    font-size: 1.8rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    letter-spacing: -0.5px;
+    color: #1a202c;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 0.5rem;
 }
 
 .nav-menu li {
@@ -54,22 +56,20 @@ nav {
 
 .nav-menu a {
     text-decoration: none;
-    color: #34495e;
+    color: #4a5568;
     font-weight: 500;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 0.9rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+    letter-spacing: 0.025em;
 }
 
 .nav-menu a:hover,
 .nav-menu a.active {
-    color: white;
-    background: linear-gradient(45deg, #3498db, #2980b9);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+    color: #2d3748;
+    background: rgba(237, 242, 247, 0.8);
+    transform: translateY(-1px);
 }
 
 /* Main Content Styles */
@@ -81,112 +81,117 @@ main {
 
 /* Hero Section */
 .hero {
-    background: url('https://picsum.photos/1200/600?random=hero') center/cover;
-    background-attachment: fixed;
-    height: 500px;
+    background: linear-gradient(135deg, rgba(254, 247, 240, 0.9) 0%, rgba(237, 242, 247, 0.9) 100%), url('https://picsum.photos/1200/600?random=hero') center/cover;
+    height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-bottom: 3rem;
-    border-radius: 12px;
+    margin-bottom: 4rem;
+    border-radius: 20px;
     overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
 }
 
 .hero-content {
     text-align: center;
-    color: white;
+    color: #2d3748;
     position: relative;
     z-index: 2;
-    max-width: 600px;
+    max-width: 650px;
     padding: 2rem;
 }
 
 .featured-badge {
     position: absolute;
-    top: -10px;
-    right: -10px;
-    background: #e74c3c;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
-    animation: pulse 2s infinite;
+    top: -8px;
+    right: -8px;
+    background: linear-gradient(135deg, #fed7d7, #feb2b2);
+    color: #c53030;
+    padding: 0.375rem 0.875rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    animation: pulse 3s infinite;
+    border: 1px solid rgba(197, 48, 48, 0.2);
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.02);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .hero h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
     line-height: 1.2;
+    font-weight: 700;
+    color: #1a202c;
 }
 
 .hero-text {
-    font-size: 1.2rem;
+    font-size: 1.125rem;
     margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    color: #4a5568;
+    line-height: 1.6;
+    font-weight: 400;
 }
 
 .cta-button a {
     display: inline-block;
-    background: linear-gradient(45deg, #f39c12, #e67e22);
-    color: white;
-    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #bee3f8, #90cdf4);
+    color: #2b6cb0;
+    padding: 0.875rem 2rem;
     text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.025em;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(43, 108, 176, 0.2);
 }
 
 .cta-button a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #90cdf4, #63b3ed);
+    box-shadow: 0 8px 25px rgba(43, 108, 176, 0.15);
 }
 
 /* Featured Artwork Section */
 .featured-artwork {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 .featured-artwork h2 {
     text-align: center;
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
 }
 
 .artwork-showcase {
     display: flex;
-    gap: 3rem;
+    gap: 4rem;
     align-items: center;
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.7);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    backdrop-filter: blur(10px);
 }
 
 .artwork-image {
@@ -196,82 +201,98 @@ main {
 .artwork-image img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 16px;
     transition: transform 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
 .artwork-image img:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
 .artwork-info {
     flex: 1;
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 .artwork-info h3 {
-    font-size: 2rem;
-    color: #2c3e50;
+    font-size: 1.75rem;
+    color: #1a202c;
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .artwork-info p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    color: #4a5568;
+    line-height: 1.7;
 }
 
 blockquote {
-    border-left: 4px solid #3498db;
-    padding-left: 1rem;
+    border-left: 3px solid #c6f6d5;
+    padding-left: 1.5rem;
     margin: 2rem 0;
     font-style: italic;
-    color: #7f8c8d;
-    background: #ecf0f1;
-    padding: 1rem;
-    border-radius: 0 8px 8px 0;
+    color: #2f855a;
+    background: rgba(198, 246, 213, 0.3);
+    padding: 1.5rem;
+    border-radius: 0 12px 12px 0;
+    font-size: 0.95rem;
 }
 
 /* Upcoming Exhibition Section */
 .upcoming-exhibition {
-    background: white;
+    background: rgba(255, 255, 255, 0.6);
     padding: 3rem;
-    border-radius: 12px;
-    margin-bottom: 4rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin-bottom: 5rem;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    backdrop-filter: blur(10px);
 }
 
 .exhibition-banner {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .blinking-text {
     display: inline-block;
-    background: linear-gradient(45deg, #e74c3c, #c0392b);
-    color: white;
-    padding: 0.5rem 2rem;
-    border-radius: 25px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    animation: blink 3s infinite;
+    background: linear-gradient(135deg, #fbb6ce, #f687b3);
+    color: #97266d;
+    padding: 0.5rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    animation: blink 4s infinite;
+    border: 1px solid rgba(151, 38, 109, 0.2);
 }
 
 @keyframes blink {
-    0%, 50% { opacity: 1; }
-    25%, 75% { opacity: 0.3; }
+
+    0%,
+    60% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0.6;
+    }
 }
 
 .upcoming-exhibition h2 {
     text-align: center;
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
 }
 
 .exhibition-content {
     display: flex;
-    gap: 3rem;
+    gap: 4rem;
     align-items: flex-start;
 }
 
@@ -281,8 +302,8 @@ blockquote {
 
 .exhibition-image img {
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
 .exhibition-details {
@@ -290,40 +311,55 @@ blockquote {
 }
 
 .exhibition-details h3 {
-    font-size: 2rem;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
+    font-size: 1.75rem;
+    color: #1a202c;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
 }
 
 .exhibition-details em {
-    color: #e74c3c;
-    font-weight: bold;
+    color: #d69e2e;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .exhibition-details p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    color: #4a5568;
+    line-height: 1.7;
 }
 
 /* Gallery Tour Section */
 .gallery-tour {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 .gallery-tour h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
 }
 
 .video-container {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .video-container video {
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.gallery-tour p {
+    color: #4a5568;
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Gallery Page Styles */
@@ -333,41 +369,45 @@ blockquote {
 
 .gallery-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .gallery-header h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
 }
 
 .gallery-header p {
-    font-size: 1.2rem;
-    color: #7f8c8d;
+    font-size: 1rem;
+    color: #4a5568;
     max-width: 600px;
     margin: 0 auto;
+    line-height: 1.7;
 }
 
 /* CSS Grid for Artwork Gallery */
 .artwork-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    margin-bottom: 4rem;
+    gap: 2rem;
+    margin-bottom: 5rem;
 }
 
 .artwork-item {
-    background: white;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    backdrop-filter: blur(10px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .artwork-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
 }
 
 .artwork-container {
@@ -377,13 +417,13 @@ blockquote {
 
 .artwork-container img {
     width: 100%;
-    height: 300px;
+    height: 280px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
 .artwork-container:hover img {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .artwork-overlay {
@@ -391,9 +431,9 @@ blockquote {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    background: linear-gradient(transparent, rgba(26, 32, 44, 0.9));
     color: white;
-    padding: 2rem 1rem 1rem;
+    padding: 2rem 1.5rem 1.5rem;
     transform: translateY(100%);
     transition: transform 0.3s ease;
 }
@@ -403,12 +443,15 @@ blockquote {
 }
 
 .artwork-overlay h3 {
-    font-size: 1.2rem;
+    font-size: 1.125rem;
     margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 .artwork-overlay p {
     margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    opacity: 0.9;
 }
 
 .artwork-description {
@@ -416,35 +459,49 @@ blockquote {
 }
 
 .artwork-description h3 {
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
+    color: #1a202c;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    font-size: 1.125rem;
 }
 
 .artwork-description p {
-    margin-bottom: 0.5rem;
-    color: #7f8c8d;
+    margin-bottom: 0.75rem;
+    color: #4a5568;
+    font-size: 0.875rem;
+    line-height: 1.6;
 }
 
 .gallery-info {
     text-align: center;
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
     padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    backdrop-filter: blur(10px);
 }
 
 .gallery-info h2 {
-    color: #2c3e50;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.gallery-info p {
+    color: #4a5568;
+    line-height: 1.7;
     margin-bottom: 1rem;
 }
 
 .gallery-info a {
-    color: #3498db;
+    color: #4299e1;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .gallery-info a:hover {
+    color: #3182ce;
     text-decoration: underline;
 }
 
@@ -454,68 +511,78 @@ blockquote {
 }
 
 .gallery-history {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 .gallery-history h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 2.5rem;
     text-align: center;
+    font-weight: 600;
+    letter-spacing: -0.025em;
 }
 
 .history-content {
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
     padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    backdrop-filter: blur(10px);
 }
 
 .history-image {
     float: left;
     margin: 0 2rem 2rem 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
 .history-text p {
     margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: justify;
+    color: #4a5568;
+    line-height: 1.7;
 }
 
 blockquote cite {
     display: block;
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    color: #95a5a6;
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: #718096;
+    font-style: normal;
 }
 
 /* Gallery Staff Section */
 .gallery-staff {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 .gallery-staff h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 2.5rem;
     text-align: center;
+    font-weight: 600;
+    letter-spacing: -0.025em;
 }
 
 .staff-list {
     list-style: none;
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.7);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    backdrop-filter: blur(10px);
 }
 
 .staff-list li {
-    padding: 1rem;
-    border-bottom: 1px solid #ecf0f1;
-    font-size: 1.1rem;
+    padding: 1.25rem;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+    font-size: 1rem;
     position: relative;
+    color: #2d3748;
 }
 
 .staff-list li:last-child {
@@ -523,39 +590,45 @@ blockquote cite {
 }
 
 .staff-list li:before {
-    content: "→";
-    color: #3498db;
+    content: "•";
+    color: #9f7aea;
     font-weight: bold;
     margin-right: 1rem;
+    font-size: 1.2rem;
 }
 
 /* Exhibition Timeline */
 .exhibition-timeline {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 .exhibition-timeline h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 2.5rem;
     text-align: center;
+    font-weight: 600;
+    letter-spacing: -0.025em;
 }
 
 .exhibitions-list {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.7);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    backdrop-filter: blur(10px);
     counter-reset: exhibition-counter;
 }
 
 .exhibitions-list li {
-    padding: 1rem;
-    border-bottom: 1px solid #ecf0f1;
-    font-size: 1.1rem;
+    padding: 1.25rem;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+    font-size: 1rem;
     counter-increment: exhibition-counter;
     position: relative;
-    padding-left: 3rem;
+    padding-left: 3.5rem;
+    color: #2d3748;
+    line-height: 1.6;
 }
 
 .exhibitions-list li:last-child {
@@ -565,43 +638,51 @@ blockquote cite {
 .exhibitions-list li:before {
     content: counter(exhibition-counter);
     position: absolute;
-    left: 1rem;
-    top: 1rem;
-    background: linear-gradient(45deg, #3498db, #2980b9);
-    color: white;
-    width: 1.5rem;
-    height: 1.5rem;
+    left: 1.25rem;
+    top: 1.25rem;
+    background: linear-gradient(135deg, #c6f6d5, #9ae6b4);
+    color: #2f855a;
+    width: 1.75rem;
+    height: 1.75rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-    font-size: 0.8rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+    border: 1px solid rgba(47, 133, 90, 0.2);
 }
 
 /* Notable Artists Section */
 .notable-artists {
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
     padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    backdrop-filter: blur(10px);
 }
 
 .notable-artists h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 2.5rem;
     text-align: center;
+    font-weight: 600;
+    letter-spacing: -0.025em;
 }
 
 .artists-content p {
     margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: justify;
+    color: #4a5568;
+    line-height: 1.7;
 }
 
 .artists-content em {
-    color: #7f8c8d;
+    color: #718096;
+    font-style: normal;
+    font-weight: 500;
 }
 
 /* Contact Page Styles */
@@ -611,57 +692,65 @@ blockquote cite {
 
 .contact-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .contact-header h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
 }
 
 .contact-header p {
-    font-size: 1.2rem;
-    color: #7f8c8d;
+    font-size: 1rem;
+    color: #4a5568;
     max-width: 600px;
     margin: 0 auto;
+    line-height: 1.7;
 }
 
 /* Contact Information */
 .contact-info {
     display: flex;
-    gap: 3rem;
-    margin-bottom: 4rem;
-    background: white;
+    gap: 4rem;
+    margin-bottom: 5rem;
+    background: rgba(255, 255, 255, 0.7);
     padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    backdrop-filter: blur(10px);
 }
 
 .contact-details {
     flex: 1;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .contact-item h3 {
-    color: #2c3e50;
+    color: #1a202c;
     margin-bottom: 1rem;
-    font-size: 1.3rem;
+    font-size: 1.125rem;
+    font-weight: 600;
 }
 
 .contact-item p {
-    color: #7f8c8d;
-    line-height: 1.8;
+    color: #4a5568;
+    line-height: 1.7;
+    font-size: 0.95rem;
 }
 
 .contact-item a {
-    color: #3498db;
+    color: #4299e1;
     text-decoration: none;
+    font-weight: 500;
 }
 
 .contact-item a:hover {
+    color: #3182ce;
     text-decoration: underline;
 }
 
@@ -671,46 +760,49 @@ blockquote cite {
 
 .location-image img {
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* Studio Hours Table */
 .studio-hours {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 .studio-hours h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 2.5rem;
     text-align: center;
+    font-weight: 600;
+    letter-spacing: -0.025em;
 }
 
 .hours-table {
     width: 100%;
-    background: white;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    backdrop-filter: blur(10px);
     border-collapse: collapse;
 }
 
 .hours-table th {
-    background: linear-gradient(45deg, #2c3e50, #34495e);
-    color: white;
-    padding: 1.5rem;
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e0);
+    color: #2d3748;
+    padding: 1.25rem;
     text-align: left;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.025em;
 }
 
 .hours-table td {
-    padding: 1.5rem;
-    border-bottom: 1px solid #ecf0f1;
-    font-size: 1.1rem;
-    color: #2c3e50;
+    padding: 1.25rem;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+    font-size: 1rem;
+    color: #2d3748;
 }
 
 .hours-table tr:last-child td {
@@ -718,11 +810,11 @@ blockquote cite {
 }
 
 .hours-table tr:nth-child(even) {
-    background: #f8f9fa;
+    background: rgba(247, 250, 252, 0.5);
 }
 
 .hours-table tr:hover {
-    background: #e8f4f8;
+    background: rgba(237, 242, 247, 0.7);
 }
 
 .hours-note {
@@ -734,53 +826,61 @@ blockquote cite {
 
 /* Visit Information */
 .visit-info {
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
     padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    backdrop-filter: blur(10px);
 }
 
 .visit-info h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 2.5rem;
     text-align: center;
+    font-weight: 600;
+    letter-spacing: -0.025em;
 }
 
 .visit-content h3 {
-    color: #2c3e50;
+    color: #1a202c;
     margin: 2rem 0 1rem 0;
-    font-size: 1.3rem;
+    font-size: 1.125rem;
+    font-weight: 600;
 }
 
 .visit-content p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    color: #7f8c8d;
-    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    color: #4a5568;
+    line-height: 1.7;
 }
 
 .visit-content a {
-    color: #3498db;
+    color: #4299e1;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .visit-content a:hover {
+    color: #3182ce;
     text-decoration: underline;
 }
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: white;
+    background: linear-gradient(135deg, #f7fafc, #edf2f7);
+    color: #4a5568;
     text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
+    padding: 3rem 2rem;
+    margin-top: 5rem;
+    border-top: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 footer p {
     margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
 }
 
 /* Responsive Design for larger screens */
@@ -801,36 +901,86 @@ img:hover {
 }
 
 /* Text styling enhancements */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Arial', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
 }
 
 p {
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 /* Link styling */
 a {
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
-/* Color variations used throughout */
-.text-primary { color: #3498db; }
-.text-secondary { color: #2c3e50; }
-.text-success { color: #27ae60; }
-.text-warning { color: #f39c12; }
-.text-danger { color: #e74c3c; }
-.text-muted { color: #7f8c8d; }
+/* Modern pastel color variations */
+.text-primary {
+    color: #4299e1;
+}
 
-/* Background color variations */
-.bg-primary { background-color: #3498db; }
-.bg-secondary { background-color: #2c3e50; }
-.bg-light { background-color: #ecf0f1; }
-.bg-white { background-color: white; }
+.text-secondary {
+    color: #2d3748;
+}
 
-/* HSL and RGB color examples in use */
-.accent-blue { color: hsl(204, 70%, 53%); }
-.accent-red { color: rgb(231, 76, 60); }
-.accent-green { color: rgba(39, 174, 96, 0.8); }
+.text-success {
+    color: #48bb78;
+}
+
+.text-warning {
+    color: #ed8936;
+}
+
+.text-danger {
+    color: #f56565;
+}
+
+.text-muted {
+    color: #718096;
+}
+
+/* Background color variations with pastels */
+.bg-primary {
+    background-color: rgba(66, 153, 225, 0.1);
+}
+
+.bg-secondary {
+    background-color: rgba(45, 55, 72, 0.05);
+}
+
+.bg-light {
+    background-color: rgba(247, 250, 252, 0.8);
+}
+
+.bg-white {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* HSL and RGB pastel color examples */
+.accent-blue {
+    color: hsl(213, 94%, 68%);
+}
+
+.accent-red {
+    color: rgb(245, 101, 101);
+}
+
+.accent-green {
+    color: rgba(72, 187, 120, 0.8);
+}
+
+.accent-purple {
+    color: hsl(270, 50%, 70%);
+}
+
+.accent-pink {
+    color: rgba(237, 137, 184, 0.9);
+}
